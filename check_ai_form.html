@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/about">О нас</a>
+        <a href="/check-ai">Проверка на ИИ</a>
+    </nav>
+    <h1>{{ title }}</h1>
+
+    {% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+
+    <form method="POST">
+        <p>Вставьте текст работы (минимум 50 символов):</p>
+        <textarea name="text" rows="15" cols="80" placeholder="Введите текст..."></textarea>
+        
+
+        <button type="submit">Проверить</button>
+    </form>
+</body>
+</html>
